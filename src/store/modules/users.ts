@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 type Token = string
-type Infos = {
+export type Infos = {
 	[index: string]: unknown // 因为Infos信息是不确定的，所以此处用到索引签名
 }
 export type UsersState = {

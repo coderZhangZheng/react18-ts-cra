@@ -1,5 +1,5 @@
 import React, { lazy } from 'react'
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 import type { RouteObject } from 'react-router-dom'
 import {
 	CopyOutlined,
@@ -25,6 +25,7 @@ declare module 'react-router' {
 			icon?: React.ReactNode
 			auth?: boolean
 		}
+		name?: string
 	}
 	interface NonIndexRouteObject {
 		meta?: {
@@ -33,22 +34,29 @@ declare module 'react-router' {
 			icon?: React.ReactNode
 			auth?: boolean
 		}
+		name?: string
 	}
 }
 
 export const routes: RouteObject[] = [
 	{
 		path: '/',
+		element: React.createElement(Navigate, { to: '/sign' })
+	},
+	{
+		path: '/',
+		name: 'home',
 		element: React.createElement(BeforeEach, null, React.createElement(Home)),
 		meta: {
 			menu: true,
 			title: '考勤管理',
 			icon: React.createElement(CopyOutlined),
-			auth: true // auth:true表示需要经过守卫
+			auth: true
 		},
 		children: [
 			{
 				path: 'sign',
+				name: 'sign',
 				element: React.createElement(Sign),
 				meta: {
 					menu: true,
@@ -59,6 +67,7 @@ export const routes: RouteObject[] = [
 			},
 			{
 				path: 'exception',
+				name: 'exception',
 				element: React.createElement(Exception),
 				meta: {
 					menu: true,
@@ -69,6 +78,7 @@ export const routes: RouteObject[] = [
 			},
 			{
 				path: 'apply',
+				name: 'apply',
 				element: React.createElement(Apply),
 				meta: {
 					menu: true,
@@ -79,6 +89,7 @@ export const routes: RouteObject[] = [
 			},
 			{
 				path: 'check',
+				name: 'check',
 				element: React.createElement(Check),
 				meta: {
 					menu: true,

@@ -1,18 +1,52 @@
+# React18+TS+CRA 在线考勤系统
+
+## 第 19 章项目创建和初始化
+
 ```
 npx create-react-app@latest react18-ts-cra --template typescript
-
 npm install axios sass antd @ant-design/icons react-router-dom redux react-redux redux-persist @reduxjs/toolkit
-
 封装axios(utils/http.ts最底层的封装)
-
 全局样式和图片(assets静态资源在index.tsx中引入，其中还涉及项目title和icon和字体图标，css重置样式-公用样式-自定义样式)
-
 集成路由和对应页面(配置路由表和页面，创建router和views和components文件夹，meta路由元信息和路由守卫，lazy和Suspense)
-
-// 设置端口并测试路由    SET PORT:8080
-
+package.json中设置端口并测试路由功能  SET PORT=8080
 集成redux状态管理(配置redux,react-redux,redux-persist,@reduxjs/toolkit)(创建store文件夹)
 ```
+
+## 第 20 章登录页和首页布局-组件拆分-登出-动态面包屑
+
+```
+字体图标：iconfont.cn
+表单组件：<Form>
+npm install classnames lodash  @types/lodash
+
+
+```
+
+## 第 21 章
+
+```
+
+```
+
+## 第 22 章
+
+```
+
+```
+
+## 第 23 章
+
+```
+
+```
+
+## 总结
+
+```
+
+```
+
+//-----------------------------------------------------------------------------------------
 
 # 该项目基于 coderwhy 的 React18+TS 网易云音乐网站项目，只有视频没有源码所以只能提取核心知识记录总结
 

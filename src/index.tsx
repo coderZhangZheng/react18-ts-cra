@@ -11,13 +11,13 @@ import store from './store'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
-	<React.StrictMode>
-		<Suspense>
-			<Provider store={store}>
-				<RouterProvider router={router}></RouterProvider>
-			</Provider>
-		</Suspense>
-	</React.StrictMode>
+	// <React.StrictMode>
+	<Suspense>
+		<Provider store={store}>
+			<RouterProvider router={router}></RouterProvider>
+		</Provider>
+	</Suspense>
+	// </React.StrictMode>
 )
 
 reportWebVitals()
