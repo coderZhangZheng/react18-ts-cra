@@ -3,6 +3,7 @@ import type { AxiosRequestConfig, AxiosResponse } from 'axios'
 import store from '../store'
 import { message } from 'antd'
 import { clearToken } from '../store/modules/users'
+import router from '../router'
 
 const instance = axios.create({
 	baseURL: 'http://localhost:3000/',
@@ -27,8 +28,10 @@ instance.interceptors.response.use(
 			message.error('token error')
 			store.dispatch(clearToken())
 			setTimeout(() => {
-				window.location.replace('/login')
+				window.location.replace('/login') //此处为什么不直接从react-router-dom中拿？
 			}, 1000)
+		} else if (response.data.errmsg === 'error') {
+			router.navigate('/500') //为什么要通过router拿到navigate，为什么不直接从react-router-dom中拿
 		}
 		return response
 	},

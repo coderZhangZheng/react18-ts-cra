@@ -2,6 +2,8 @@ import { configureStore } from '@reduxjs/toolkit'
 import type { Reducer, AnyAction } from '@reduxjs/toolkit'
 import usersReducer from './modules/users'
 import signsReducer from './modules/signs'
+import checksReducer from './modules/checks'
+import newsReducer from './modules/news'
 import type { UsersState } from './modules/users'
 import type { PersistPartial } from 'redux-persist/es/persistReducer'
 import {
@@ -30,7 +32,9 @@ const store = configureStore({
 			UsersState & PersistPartial,
 			AnyAction
 		>,
-		signs: signsReducer
+		signs: signsReducer,
+		checks: checksReducer,
+		news: newsReducer
 	},
 	middleware: (getDefaultMiddleware) =>
 		getDefaultMiddleware({
