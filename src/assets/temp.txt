@@ -1,0 +1,221 @@
+chrome
+vscode
+https://login.alibaba-inc.com/ssoLogin.htm?disableCDNResource=true&BACK_URL=https%3A%2F%2Falilang.alibaba-inc.com%2Fportal%2FinstallApp.htm&preLoginKey=GsSidfUZLK1684201539965BfSxaTwrzJ&CONTEXT_PATH=%2F&CLIENT_VERSION=1.5.1%20&APP_NAME=alilang
+
+
+
+React+TS
+    css基本功太弱了要加强
+    router6/rtk/scss/ts
+       antd+ts => antdPro
+    webpack/vite/rollup
+
+学习路线
+	css/js/ts/react/webpack/http基本功
+	antd5组件源码入门
+	浏览器刷新频率60Hz,16.6ms，重绘，卡顿是什么意思
+	//珠峰，高少云，尚硅谷。。。
+	antdPro项目源码
+	ahooks源码
+	react中常用API源码 
+	react核心源码
+	react周边库源码
+	
+-----
+import React, {
+	useState,useReducer,
+	useEffect,useLayoutEffect,
+	createContext,useContext,
+	memo,useMemo,useCallback,
+	forwardRef,useRef,useImperativeHandle,
+	lazy,Suspense,
+	startTransition,useTransition,useDeferredValue 
+	} from 'react'
+import type { 
+	FC,
+	RouterObject
+	} from 'react'
+------
+import { Provider, useSelector, useDispatch } from 'react-redux'
+------
+import {Link,
+	NavLink,
+	Outlet,
+	useParams, 
+	useSearchParams,
+	useLocation,
+	Navigate,
+	useNavigate,
+	useLoaderData,
+	redirect,
+	createHashRouter, 
+	createBrowserRouter,
+	createRoutesFromElements, 
+	matchRoutes,
+	RouterProvider,
+	Route,
+	} from 'react-router-dom'
+------
+redux 
+react-redux 
+redux-thunk 
+redux-saga
+redux-persist
+@reduxjs/toolkit
+-----
+less
+scss
+styled-components
+tailwinds
+
+
+
+
+---------------------------
+React.Key
+React.CSSProperties
+React.MouseEvent 
+React.KeyboardEvent
+React.ChangeEvent<HTMLInputElement>
+React.UIEvent<HTMLElement, UIEvent>
+useRef<HTMLButtonElement>(null)
+useState<React.Key[]>([])
+--------------------------------
+props.children as React.ReactElement
+---------------------------------
+TS里几个常用的内置工具类型,尽量搞懂
+Partial,Required,Readonly
+type Bar = Record<key,value>  
+type Bar = Omit<A,B>     //从A中排除B
+type Bar = Pick<A,B>     //从A中提取B
+type Bar = Exclude<A,B>  //从A中排除B
+type Bar = Extract<A,B>  //从A中提取B
+
+type Bar = A & B & C     //交叉类型
+type Bar = A | B | C     //联合类型
+typeof Bar   	//根据实例反推出实际类型
+keyof Bar    	//根据对象实例的key返回联合类型
+ReturnType和Parameters   //获取的都是函数体，返回值和入参类型
+-----------------------------------
+type EditableTableProps = Parameters<typeof Table>[0];
+
+----------------------------------
+interface DataType {
+  gender: string;
+  name: {
+    title: string;
+    first: string;
+    last: string;
+  };
+  email: string;
+  picture: {
+    large: string;
+    medium: string;
+    thumbnail: string;
+  };
+  nat: string;
+}
+useState<DataType[]>([])
+interface DraggableTabPaneProps extends React.HTMLAttributes<HTMLDivElement> {
+  'data-node-key': string;
+  onActiveBarTransform: (className: string) => void;
+}
+interface EditableCellProps extends React.HTMLAttributes<HTMLElement> {
+  editing: boolean;
+  dataIndex: string;
+  title: any;
+  inputType: 'number' | 'text';
+  record: Item;
+  index: number;
+  children: React.ReactNode;
+}
+
+-------------------------------
+英语能力
+编程能力
+运动能力
+-------------------------------
+13-15.30
+15.30-18
+
+20-22
+22-24
+
+
+login: 请求拦截器会获取redux中的token同时加入到请求头中 
+	登录页是没有路由守卫的，所以登录成功拿到token
+	将token保存在redux中，同时将token持久化
+	跳转到首页时遇到路由守卫(有token则获取用户信息，没有则跳转到登录页)
+
+路由全局守卫和路由独享守卫区别？
+各种权限管理进入情况总结？
+看这边代码
+	
+
+
+umi3+antd4+react17+ts+RPC+less+
+
+React.cloneElement与createElement区别?
+
+if (Object.prototype.hasOwnProperty.call(emailList, key)) {
+    const element = emailList[key];
+    newEmailList.push(element);
+}   //为什么要这么判断一个数据？
+
+Object.keys/entries/assign三种api总结形成文档
+
+React.cloneElement(props?.children, {
+   onClick: e => {
+       onShow(e, props?.children?.props);
+   },
+})}
+------------------------------------
+import {
+  useParams,
+  useLocation,
+  useHistory,
+  matchPath,
+} from 'react-router-dom'   //路由应该使用umi3的方式引入？
+------------------------------------
+import {
+	history,
+	withRouter,
+	Link
+} from 'umi'       //umi3内部router是几版本？   
+@umijs/plugin-qiankun
+@umijs/preset-react
+------------------------------------
+import { 
+	findIndex，
+	last,
+	debounce,throttle,
+	omit,
+	get,set,
+	isEmpty,
+	cloneDeep,
+	split,
+	includes,
+	upperFirst,
+	toLower,
+	List
+} from 'lodash'
+import xlsx from 'xlsx'
+import moment from 'moment'
+import momentTimezone from 'moment-timezone'
+import classNames from 'classnames'
+import Clipboard from 'clipboard'
+import { v4 as uuidv4 } from 'uuid'
+import queryString from 'query-string'
+import { createContainer } from 'unstated-next'
+------------------------------------
+const myUrl = new URL(reqUrl)
+const bytes = new Uint8Array(buffer)
+------------------------------------
+import { SketchPicker } from 'react-color'
+
+
+
+
+
+
+
