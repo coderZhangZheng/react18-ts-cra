@@ -177,18 +177,16 @@ import {
   matchPath,
 } from 'react-router-dom'   //路由应该使用umi3的方式引入？
 ------------------------------------
-import {
-	history,
-	withRouter,
-	Link
-} from 'umi'       //umi3内部router是几版本？   
-@umijs/plugin-qiankun
-@umijs/preset-react
+import { history,withRouter,Link,
+	request,useRequest,
+	connect,
+	useModal,useAccess,
+	utils,
+	defineConfig } from 'umi'   //umi3(router5+webpack5) 
 ------------------------------------
 import { 
 	findIndex，
 	last,
-	debounce,throttle,
 	omit,
 	get,set,
 	isEmpty,
@@ -197,21 +195,53 @@ import {
 	includes,
 	upperFirst,
 	toLower,
-	List
+	List,
+	debounce,throttle,
 } from 'lodash'
-import xlsx from 'xlsx'
+import xlsx from 'xlsx'       //对excel的解析处理
 import moment from 'moment'
-import momentTimezone from 'moment-timezone'
+import momentTimezone from 'moment-timezone'    //对时间时区的处理更加强大
 import classNames from 'classnames'
 import Clipboard from 'clipboard'
-import { v4 as uuidv4 } from 'uuid'
-import queryString from 'query-string'
-import { createContainer } from 'unstated-next'
+import { v4 as uuidv4 } from 'uuid'       
+import queryString from 'query-string'           //与qs库解析url类似，但比qs更加轻量
+import { createContainer } from 'unstated-next'  //对react提供的context做了一层封装
 ------------------------------------
 const myUrl = new URL(reqUrl)
-const bytes = new Uint8Array(buffer)
+const bytes = new Uint8Array(buffer)           //处理excel，属于js原生基本功
 ------------------------------------
-import { SketchPicker } from 'react-color'
+import { SketchPicker } from 'react-color'     //选色板
+
+
+
+--------------------------------------------------------
+CSS基本功
+TS基本功(type,interface,断言,内置函数.泛型)
+JS基本功(http,axios,promise,浏览器,模块化,手写代码,正则)
+React项目经验
+-	redux,RTK,dva
+-	umi3+router5
+-	umi4+router6
+- nextjs
+- react源码
+- taro小程序
+Webpack工程化(gulp,vite,rollup,parcel,esbuild)
+qiankun微前端(single-spa)
+性能优化经验
+--------------------------------------------------------
+Flutter
+Vue项目经验(Uniapp,NuxtJS)
+可视化经验
+设计模式
+数据结构与算法
+Node项目经验
+- Express,Koa,Egg,NestJS
+- Mysql,Redis,MongoDB
+- Nginx,Docker,Linux,Gitlab,Jenkins,Sentry
+
+
+
+
 
 
 
